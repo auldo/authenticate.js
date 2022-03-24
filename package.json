@@ -1,0 +1,34 @@
+{
+  "name": "authenticate.js",
+  "version": "1.0.0",
+  "description": "Provides a lightweight authentication service based on an Express server and token-based authentication with JWTs. Uses Bcrypt for encryption and is intended to be used with the MongoDB database.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/auldo/authenticate.js.git"
+  },
+  "keywords": [
+    "authentication",
+    "jwt",
+    "token",
+    "encrpytion",
+    "bcrypt"
+  ],
+  "author": "Dominik Aulinger",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/auldo/authenticate.js/issues"
+  },
+  "homepage": "https://github.com/auldo/authenticate.js#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "cookie-parser": "^1.4.6",
+    "express": "^4.17.3",
+    "express-validator": "^6.14.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.2.8"
+  }
+}

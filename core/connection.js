@@ -5,8 +5,13 @@ const mongoose = require('mongoose')
  * @returns {Promise<void>} A promise, that resolves in the database connection.
  */
 
-//mongodb://root:7pL25uWZcjDJ@bcimongodb:27017/
-const uri = "mongodb://" + process.env.DB_USER + ":" + process.env.DB_PW + "@" + process.env.DB_HOST + ":" + process.env.DB_PORT
+let uri;
+if(!process.env.DB_USER && !process.env.DB_PW){
+    uri = "mongodb://" + process.env.DB_HOST + ":" + process.env.DB_PORT
+} else {
+    uri = "mongodb://" + process.env.DB_USER + ":" + process.env.DB_PW + "@" + process.env.DB_HOST + ":" + process.env.DB_PORT
+}
+console.log(uri)
 
 async function connect(){
     await mongoose.connect(uri)

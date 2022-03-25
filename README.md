@@ -1,7 +1,9 @@
 # authenticate.js
 Provides a lightweight authentication service based on an Express server and token-based authentication with JWTs. Uses Bcrypt for encryption and is intended to be used with the MongoDB database.
+## Docker Hub
+The repository is available on Docker Hub: [Authenticate.js](https://registry.hub.docker.com/r/auldo99/authenticate.js)
 ## Usage
-Usage with docker is strongly recommended. An example docker-compose file including a database is shown in the following
+Usage with docker is strongly recommended. An example docker-compose file including a database is shown in the following.
 ```
 version: '3.7'
 services:

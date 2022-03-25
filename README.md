@@ -5,6 +5,7 @@ Usage with docker is strongly recommended. An example docker-compose file includ
 ```
 version: '3.7'
 services:
+
   authenticationdb:
     container_name: authenticationdb
     image: mongo:latest
@@ -12,19 +13,16 @@ services:
     environment:
       - MONGO_INITDB_ROOT_USERNAME=root
       - MONGO_INITDB_ROOT_PASSWORD=pword
-    ports:
-      - "27017:27017"
+
   authenticationserver:
     container_name: authenticationserver
-    build:
-      context: .
-      dockerfile: ./Dockerfile
-      args:
-        - DB_HOST=authenticationdb
-        - DB_PORT=27017
-        - DB_USER=root
-        - DB_PW=pword
+    image: auldo99/authenticate.js
     restart: always
+    environment:
+      - DB_HOST=authenticationdb
+      - DB_PORT=27017
+      - DB_USER=root
+      - DB_PW=pword
     ports:
       - "3000:3000"
     depends_on:
